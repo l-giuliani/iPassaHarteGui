@@ -1,11 +1,19 @@
 #include "MessageList.h"
+#include "SystemService.h"
 
 MessageList::MessageList() {
-    dataList.append("Item 1");
-    dataList.append("Item 2");
-    dataList.append("Item 3");
+    //startTimer(1000);
+    SystemService::setMessageList(this);
+}
 
-    startTimer(1000);
+void MessageList::addElement(QString str){
+    mutex.lock();
+    dataList.push_front(str);
+    if(dataList.size() > 15){
+        dataList.pop_back();
+    }
+    emit modelChanged();
+    mutex.unlock();
 }
 
 QStringList MessageList::model() {

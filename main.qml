@@ -8,7 +8,7 @@ Window {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Hello World")
+    title: qsTr("iPassaHarte")
     Rectangle{
         id: container
         width: mainWindow.width
@@ -52,9 +52,15 @@ Window {
                     model: messageList.model
                     anchors.fill: parent
                     delegate: Rectangle {
-                             height: 25
+                            height: text.contentHeight
                              width: parent.width
-                             Text {
+                             TextInput {
+                                 id: text
+                                 readOnly: true
+                                 selectByMouse: true
+                                 width: parent.width
+                                 height: parent.height
+                                 wrapMode: Text.WrapAnywhere
                                  text: modelData
                                  anchors.centerIn: parent
                              }

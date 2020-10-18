@@ -2,8 +2,8 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
-#include "MessageList.h"
-
+#include "driver/socket/Socket.h"
+#include "SystemService.h"
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -12,7 +12,8 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-    MessageList messageList;
+    SystemService systemService;
+
     qmlRegisterType<MessageList>("MessageList", 1, 0, "MessageList");
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
