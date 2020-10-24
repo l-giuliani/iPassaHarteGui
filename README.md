@@ -1,6 +1,6 @@
 # iPassaHarteGui
 ### What is iPassaHarteGui  
-iPassaHarteGui is a gui for iPassaHarte.  
+iPassaHarteGui is a gui for [iPassaHarte](https://github.com/l-giuliani/iPassaHarte).  
 When it is launched iPassaHarteGui tries to attach to port 23 on localhost and it waits for incoming data to display on the screen.
 You can also use it as a generic gui to dispay anything incoming from a socket server.
 ### Project Status
